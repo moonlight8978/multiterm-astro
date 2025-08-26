@@ -1,15 +1,13 @@
 {
-  "name": "multiterm-astro",
+  "name": "@moonlight8978/multiterm-astro",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "description": "A terminal-inspired coding blog built with Astro.",
   "type": "module",
   "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "postbuild": "pagefind --site dist",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier --write ."
+  "exports": {
+    "./*": "./src/*"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.6",

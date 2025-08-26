@@ -1,0 +1,35 @@
+name: Publish to GitHub Registry
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Configure npm registry
+        run: |
+          echo <<-EOF > .npmrc
+            //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+            
+            @moonlight8978:registry=https://npm.pkg.github.com
+          EOF
+
+      - name: Publish
+        run: npm publish
+
+
