@@ -9,6 +9,11 @@
   "exports": {
     "./*": "./src/*"
   },
+  "files": [
+    "src",
+    "package.json",
+    "tsconfig.json"
+  ],
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.6",
     "@astrojs/mdx": "^4.3.4",
