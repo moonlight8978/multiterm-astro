@@ -5,7 +5,7 @@
   },
   "description": "A terminal-inspired coding blog built with Astro.",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "exports": {
     "./*": "./src/*"
   },
